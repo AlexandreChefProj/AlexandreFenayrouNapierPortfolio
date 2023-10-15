@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>week_5.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///r%3A/2.Travail/1.Enseignement/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css"><link rel="stylesheet" href="file:///d%3A/rdaros/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="documentation">Documentation</h1>
+<p>This section is related to your work on clean code and documentation in week 5. I originaly failed to make my part of the app that was due for week 3,, but I am now commenting it as I finished it during this week's practical.</p>
+<h2 id="clean-code-rules">Clean Code Rules</h2>
+<h3 id="rule-1-meaningful-variable-names">Rule 1: Meaningful Variable Names</h3>
+<p><strong>Summary</strong>: In clean code, variable names should be descriptive and indicative of their purpose, promoting code readability.</p>
+<ul>
+<li><img src="images/screenshota.png" alt="Screenshot a"><br>
+<strong>Example</strong>: In the code provided, the variable <code>System_varTypes</code> represents a collection of system variables, making its purpose clear.</li>
+</ul>
+<p><strong>Implementation</strong>: The choice of variable name <code>System_varTypes</code> effectively communicates its role in the code.</p>
+<h3 id="rule-2-avoid-magic-numbers">Rule 2: Avoid Magic Numbers</h3>
+<p><strong>Summary</strong>: Avoid using hard-coded, unexplained numerical values (magic numbers) in the code. Instead, use named constants or variables with descriptive names.</p>
+<p><strong>Example</strong>: In the code, there are no instances of magic numbers. All numbers and values are self-explanatory or stored in variables/constants.</p>
+<p><strong>Implementation</strong>: The absence of magic numbers enhances code readability and maintainability.</p>
+<h3 id="rule-3-dry-principle-dont-repeat-yourself">Rule 3: DRY Principle (Don't Repeat Yourself)</h3>
+<p><strong>Summary</strong>: Avoid duplicating code segments. Reuse code whenever possible to reduce redundancy and simplify maintenance.</p>
+<p><strong>Example</strong>: In the code provided, the same validation logic for user inputs is repeated in multiple event handlers.</p>
+<p><strong>Implementation</strong>: To adhere to the DRY principle, the validation logic can be encapsulated in a separate method and called from each event handler, reducing code duplication and improving maintainability.</p>
+<h3 id="rule-4-proper-indentation-and-formatting">Rule 4: Proper Indentation and Formatting</h3>
+<p><strong>Summary</strong>: Maintain consistent and clear code formatting with proper indentation, line breaks, and spacing.</p>
+<ul>
+<li><img src="images/screenshotc.png" alt="Screenshot c"><br>
+<strong>Example</strong>: The code is well-formatted with consistent indentation and spacing, enhancing readability.</li>
+</ul>
+<p><strong>Implementation</strong>: Consistent formatting improves code readability and maintainability.</p>
+<h3 id="rule-5-single-responsibility-principle-srp">Rule 5: Single Responsibility Principle (SRP)</h3>
+<p><strong>Summary</strong>: Each function or class should have one clear responsibility. Avoid functions or classes that do too many things.</p>
+<ul>
+<li><img src="images/screenshotd.png" alt="Screenshot d"></li>
+<li><img src="images/screenshote.png" alt="Screenshot e"><br>
+<strong>Example</strong>: In the code, each method ( <code>OnAddSystem_varTypeClicked</code>, <code>OnSystem_varTypeTapped</code>, for exemple here) has a clear and distinct responsibility related to system variable management.</li>
+</ul>
+<p><strong>Implementation</strong>: The code adheres to the SRP by assigning specific tasks to individual methods.</p>
+<h3 id="rule-6-clear-and-concise-comments">Rule 6: Clear and Concise Comments</h3>
+<p><strong>Summary</strong>: Use comments sparingly and focus on explaining the 'why' and not the 'how.' Clear, concise comments provide valuable insights into code intent.</p>
+<p><strong>Example</strong>: The code provides comments explaining the purpose of each method and event handler, making it clear why each piece of code exists.</p>
+<p><strong>Implementation</strong>: Comments in the code provide insights into code intent and are concise, aiding understanding without duplicating code explanations.</p>
+<h2 id="integration-of-doxygen-comments">Integration of Doxygen Comments</h2>
+<p>Doxygen comments have been integrated into the codebase to facilitate code documentation. However, Doxygen failed to provide any changes to the code comments, issueing in not adding anything. I think a bug occured and doing it multiple times did not change the result of the maneuver.</p>
+<ul>
+<li><img src="images/screenshotf.png" alt="Screenshot f"></li>
+<li><img src="images/screenshotg.png" alt="Screenshot g"></li>
+</ul>
+<h2 id="highlighting-clean-code-practices">Highlighting Clean Code Practices</h2>
+<p>Three examples will be provided to showcase how clean code practices have eliminated the need for comments:</p>
+<ol>
+<li>
+<p><strong>Descriptive Function Names</strong>: Function names like <code>OnAddSystem_varTypeClicked</code> and <code>OnSystem_varTypeTapped</code> clearly indicate their purpose, eliminating the need for additional comments.</p>
+</li>
+<li>
+<p><strong>Proper Indentation and Formatting</strong>: The code is indented accordingly to the C# coding practices. As it is not necessary for the code to run unlike python for exemple, it is helpful to make the code self explainatory and remove the need for comments.</p>
+</li>
+<li>
+<p><strong>Avoidance of Magic Numbers</strong>: No magic numbers are present in the code; variables and constants are used instead, making the code self-documenting.</p>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>This documentation highlights the adherence to clean code principles, the integration of Doxygen comments which unfortunatly didn't work out, and the reduction of comments through clean code practices. The provided examples and explanations aim to enhance code quality and maintainability, thus offering a better experience for futur people working on the code.</p>
+
+</body>
+
+</html>
