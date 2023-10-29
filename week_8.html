@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>week_8.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///r%3A/2.Travail/1.Enseignement/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css"><link rel="stylesheet" href="file:///d%3A/rdaros/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="week-8-project-work-1">Week 8: Project work 1</h1>
+<p>This week we were asigned new tasks for our MAUI App. These tasks were harder than week 3's, For exemple, for week 3 I had to create a page that allowed me to create an element with an Id and a name, modify it and delete it. The task I chose for week 8 is the same, but now the element as a type, which can also be modified, and we can sort items by type and look for them by names. The task I chose was: As an UNDAC Team Leader I want to view team alerts so that I can take appropriate action.</p>
+<h2 id="code-showcase">Code showcase</h2>
+<p>It's the third year since I've started coding and I have been teached abour the reusability of code. For week 8's code, I have copied and pasted every page I have done for week 3's work and started from there.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">using</span> SQLite;
+
+
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">UNDAC_App.Models</span>
+{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Alert</span>
+    {
+        [<span class="hljs-meta">PrimaryKey, AutoIncrement</span>]
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> Id { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Name { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Type { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Color { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+    }
+}
+
+</div></code></pre>
+<p>This is my Alert model. There is a color variable for I wanted to have different displays depending on what type of alert was on screen, thus making better readability for user.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnFilterByTypeClicked</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)</span>
+{
+    <span class="hljs-comment">// Create a list of available alert types</span>
+    <span class="hljs-keyword">string</span>[] alertTypes = { <span class="hljs-string">"new"</span>, <span class="hljs-string">"ongoing"</span>, <span class="hljs-string">"reviewed"</span>, <span class="hljs-string">"cleared"</span>, <span class="hljs-string">"blocked"</span>, <span class="hljs-string">"Cancel"</span> };
+
+    <span class="hljs-comment">// Show an action sheet for selecting the alert type</span>
+    DisplayActionSheet(<span class="hljs-string">"Filter by Alert Type"</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, alertTypes).ContinueWith(task =&gt;
+    {
+        <span class="hljs-keyword">if</span> (task.Result == <span class="hljs-string">"Cancel"</span>)
+        {
+            <span class="hljs-keyword">var</span> filteredAlerts = AlertTypes;
+            AlertTypesListView.ItemsSource = filteredAlerts;
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (alertTypes.Contains(task.Result))
+        {
+            <span class="hljs-keyword">string</span> selectedType = task.Result;
+
+            <span class="hljs-comment">// Filter alerts by the selected type and update the ListView</span>
+            <span class="hljs-keyword">var</span> filteredAlerts = AlertTypes.Where(alert =&gt; alert.Type == selectedType).ToList();
+            AlertTypesListView.ItemsSource = filteredAlerts;
+        }
+    }, TaskScheduler.FromCurrentSynchronizationContext());
+}
+</div></code></pre>
+<p>This code is the code that makes the filter button work. We first create the list of the types of alerts, plus the cancel button. Xarmin.Forms has a <code>csharp DisplayActionSheet</code> function that creates an onscreen list with clickable elements. Then with the <code>csharp ContinueWith(task =&gt;</code>function, we can wright the code that will play directly when the choice is made.</p>
+<pre class="hljs"><code><div>&lt;StackLayout Orientation=&quot;Horizontal&quot; Spacing=&quot;8&quot;&gt;
+    &lt;Label Text=&quot;{Binding Name}&quot; VerticalOptions=&quot;CenterAndExpand&quot; TextColor=&quot;Black&quot; /&gt;
+    &lt;Label Text=&quot;{Binding Color}&quot; VerticalOptions=&quot;CenterAndExpand&quot; TextColor=&quot;Black&quot; /&gt;
+    &lt;Label Text=&quot;{Binding Type}&quot; VerticalOptions=&quot;CenterAndExpand&quot; TextColor=&quot;{Binding Color}&quot;/&gt;
+    &lt;Button Text=&quot;Modify&quot; Clicked=&quot;OnAlertTypeModify&quot; CommandParameter=&quot;{Binding .}&quot; BackgroundColor=&quot;BurlyWood&quot; TextColor=&quot;White&quot; WidthRequest=&quot;80&quot; HeightRequest=&quot;40&quot; HorizontalOptions=&quot;EndAndExpand&quot;/&gt;
+    &lt;Button Text=&quot;Delete&quot; Clicked=&quot;OnAlertTypeDelete&quot; CommandParameter=&quot;{Binding .}&quot; BackgroundColor=&quot;Coral&quot; TextColor=&quot;White&quot; WidthRequest=&quot;80&quot; HeightRequest=&quot;40&quot; HorizontalOptions=&quot;End&quot;/&gt;
+&lt;/StackLayout&gt;
+</div></code></pre>
+<p>Here is the xaml for showing on screen an element. Here I am showing it's name, it's colour and it's type. I am having an issue with the type not showing in the selected colour but being shown black. Here, the code from week 3's barely changed, I added 2 lines of code and this part was changed for good.</p>
+<p>For me, the reusability of code is very importent. It makes work faster and easier. It requires good naming of functions and variables and good code ethique. If these rules are respected, new code can be created from already existing one. The issue is that the code has to be modified, so I can't use the same functions and can't apply DRY. If the functions were the same, I would've found a way to apply DRY.</p>
+<h2 id="code-review-for-my-code">Code review for my code</h2>
+<p><a href="https://github.com/wardliii/Green-Team/pull/77">Link to the code review done for my code</a></p>
+<p>Here is the code review that has been done for my code. Here, a coworker pointed out that two functions were doing the same thing. Originally my code contained 2 ways to modify an element:</p>
+<ul>
+<li>by clicking the modify button.</li>
+<li>by clicking the element.<br>
+At first I thought it would be nice to have an evenement occure when you click the element but I didn't know what to put. I didn't delete the clicked element but I did put it as comment. If I have to update the code with, for example, a description of the Alert, I can make it so that it shows when you click the element. By keeping in mind this way of interacting with the app, I will be able to show info to the user without showing yet another button in front of the element.</li>
+</ul>
+<h2 id="code-review-i-did">Code review I did</h2>
+<p><a href="https://github.com/wardliii/Green-Team/pull/74">Link to the code review I did</a></p>
+<p>I reviewed a coworker's work and noticed that one acceptence criteria was not respected. As their task was ressemblant to mine, I proposed to him that we have a call so that I show him how I did mine. The missing criteria is the search bar. I use it to search for issues by name and they use it to search for Partners.</p>
+<p>A coworker forgetting a criteria would be alarming in a real company situation. A good practice I will onwards adopt is to look at what was the acceptence criteria before judging the code. If I did not find their code to be a bit shorter then what I had expected, I wouldn't have looked at the criteria and would have authorised the pull request.</p>
+<h2 id="reflective-section">Reflective section</h2>
+<p>This week I have realised that I'm not the only one having issues with code testing. A lot of my coworkers also have errors in their code on bits that work for others etc.</p>
+<p>In a team situation, I think that overviewing a codereview, being to lite on the checking or doing it very fast can be a common problem. I myself am part of the problem since I almost authorised the PR.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This week again I omitted the code testing. I appear to not comprehend how it works and it keeps on generating errors in my code. For next week I would like to understand it more and be more efficient in code reviewing and not let any mistake slide. I don't think I have issues with coding for now as the code produced was similar to what I had already done and we were multiple coworkers on the same type of tasks, so we could help each other in practicals.</p>
+
+</body>
+
+</html>
