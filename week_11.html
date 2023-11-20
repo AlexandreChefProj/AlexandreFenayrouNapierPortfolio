@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>week_11.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///r%3A/2.Travail/1.Enseignement/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css"><link rel="stylesheet" href="file:///d%3A/rdaros/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="week-11-project-work-4">Week 11: Project work 4</h1>
+<p>This week I took a task that was posted under week 9's series. It had no description and no required features so I had to invent what would be the effective solution for the title of the task: &quot;As an UNDAC Disaster Management Coordinator, I want to record the actual time and resources used by operations so that overall resource use can be tracked and optimised&quot;. From what we've done before, I noticed 2 major things I have to do: track and optimise. The &quot;item&quot; I that will be created is an operation and we will be able to categorise it by it's value so that we're able to take optimal choices and put optimal efforts in it.</p>
+<h2 id="code-showcase">Code showcase</h2>
+<p>Here is the class model for the operation. As simple as it looks, the only thing that matters is that the &quot;item&quot; can be described and that it's priority or weight can be quantified. In the making of such quantifiable variable I've used an integer called Value.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">using</span> SQLite;
+
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">UNDAC_App.Models</span>
+{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Operation</span>
+    {
+        [<span class="hljs-meta">PrimaryKey, AutoIncrement</span>]
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> Id { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Name { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> Value { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Description { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+    }
+}
+
+</div></code></pre>
+<p>While creating the function that creates an operation, I was confronted with the issue of how to manage the value. What should the value be? We can't, from just a description, attribute a value variable. So I've came to the conclusion that the value has to be typed in, leaving the responsibility of quantifying the weight of the operation to it's creator. I've chosen to set the lowest value to 1, being minimal resources required, to 100, being maximal resources required. It also reflects on the code as it is capped here.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">void</span> <span class="hljs-title">AddOp</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)</span>
+{
+    <span class="hljs-keyword">var</span> name = <span class="hljs-keyword">await</span> DisplayPromptAsync(<span class="hljs-string">"Operation"</span>, <span class="hljs-string">"Please enter name: "</span>);
+    <span class="hljs-keyword">var</span> desc = <span class="hljs-keyword">await</span> DisplayPromptAsync(<span class="hljs-string">"Operation"</span>, <span class="hljs-string">"Please enter description of the resources used: "</span>);
+    <span class="hljs-keyword">var</span> valueString = <span class="hljs-keyword">await</span> DisplayPromptAsync(<span class="hljs-string">"Operation"</span>, <span class="hljs-string">"Please enter the value for the resource used. The bigger the score, the more important the operation will be considered (will cap at 100)"</span>);
+    <span class="hljs-keyword">int</span> <span class="hljs-keyword">value</span> = <span class="hljs-keyword">int</span>.Parse(valueString);
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">value</span> &lt; <span class="hljs-number">1</span>)
+    {
+        <span class="hljs-keyword">value</span> = <span class="hljs-number">1</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">value</span> &gt; <span class="hljs-number">100</span>) 
+    {
+        <span class="hljs-keyword">value</span> = <span class="hljs-number">100</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">string</span>.IsNullOrWhiteSpace(name))
+    {
+        opManager.AddOperation(name, <span class="hljs-keyword">value</span>, desc);
+
+        OpList.Clear();
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> op <span class="hljs-keyword">in</span> opManager.GetAllOp())
+        {
+            OpList.Add(op);
+        }
+    }
+}
+</div></code></pre>
+<p>(Note that the previous code doesn't refrain the user to enter non-number strings. This is what has been noticed after code review.)</p>
+<p>The resources required for the operations have to be tracked. I have implemented a way to keep track of the value of each operation by sorting them by increasing or decreasing weight. This is the best way I have been able to track how important an operation is.</p>
+<p>We are also able to return to the id sorting, as it will return to the order of origin, from the oldest to newest.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SortByDecreasingValue</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)</span>
+{
+    OpList = <span class="hljs-keyword">new</span> ObservableCollection&lt;Operation&gt;(OpList.OrderByDescending(op =&gt; op.Value));
+    OpListView.ItemsSource = OpList;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SortByIncreasingValue</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)</span>
+{
+    OpList = <span class="hljs-keyword">new</span> ObservableCollection&lt;Operation&gt;(OpList.OrderBy(op =&gt; op.Value));
+    OpListView.ItemsSource = OpList;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SortById</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)</span>
+{
+    OpList = <span class="hljs-keyword">new</span> ObservableCollection&lt;Operation&gt;(OpList.OrderBy(op =&gt; op.Id));
+    OpListView.ItemsSource = OpList;
+}
+</div></code></pre>
+<p>Here is a screenshot of the user interface. There are 3 buttons assigned to each operation created, letting the user modify either the value or the description and deleting the item. The 4 remaining buttons are here to sort the operations and create them.</p>
+<p><img src="images/5screenshot_1.png" alt="Screenshot to the page"></p>
+<h2 id="code-review-for-my-code">Code review for my code</h2>
+<p><a href="https://github.com/wardliii/Green-Team/issues/103">Link to the code review done for my code</a></p>
+<p>As stated before, there is an issue with the reception of the value information. It can be nominal and if so will crash the system. there are other ways to get only numbers and therefore shall be used instead.</p>
+<h2 id="code-review-i-did">Code review I did</h2>
+<p><a href="https://github.com/wardliii/Green-Team/pull/105">Link to the code review I did</a></p>
+<p>Their code is clean and follows the good code practice we used for the module. If I had to find the little something, it would be that this type of page might need a sort option, to make it easier to visualise.</p>
+<h2 id="reflective-section">Reflective section</h2>
+<p>Working on a new issue with 0 information has it's good and it's bad. I am totally free to interpret the issue but I have no idea if what I am doing answers the issue or if I am missing the point. While it can be disturbing, I think it's also part of the job to come up with solutions when it isn't written in the requirements.</p>
+
+</body>
+
+</html>
